@@ -159,18 +159,18 @@ class PwnCmd(object):
         else :
             print("error")
 
-    def got(self):
-        """ Print the got table """
-        processname = getprocname()
-        if processname :
-            cmd = "objdump -R "
-            if iscplus :
-                cmd += "--demangle "
-            cmd += "\"" + processname + "\""
-            got = subprocess.check_output(cmd,shell=True)[:-2].decode('utf8')
-            print(got)
-        else :
-            print("No current process or executable file specified." )
+    # def got(self):
+    #     """ Print the got table """
+    #     processname = getprocname()
+    #     if processname :
+    #         cmd = "objdump -R "
+    #         if iscplus :
+    #             cmd += "--demangle "
+    #         cmd += "\"" + processname + "\""
+    #         got = subprocess.check_output(cmd,shell=True)[:-2].decode('utf8')
+    #         print(got)
+    #     else :
+    #         print("No current process or executable file specified." )
 
     def dyn(self):
         """ Print dynamic section """
